@@ -16,7 +16,7 @@ const argv = yargs(hideBin(process.argv))
     .option("platform", {
         alias: "p",
         description: "The platform to generate for",
-        choices: ["discord", "messenger", "telegram", "whatsapp"] as const,
+        choices: ["discord", "messenger", "signal", "telegram", "whatsapp"] as const,
         type: "string",
         demandOption: true,
     })

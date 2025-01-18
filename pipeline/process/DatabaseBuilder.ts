@@ -309,6 +309,8 @@ export class DatabaseBuilder {
     private makeFinalChannel(channel: PChannel): Channel {
         const participants = this.dmParticipants.get(channel.id) || [];
 
+        console.log(this.authors);
+
         // I really don't want to do this here, but I don't
         // like the alternatives right now
         const formatParticipantName = (i: Index) => {

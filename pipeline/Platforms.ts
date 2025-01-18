@@ -1,5 +1,5 @@
 /** Available platforms */
-export type Platform = "discord" | "messenger" | "telegram" | "whatsapp";
+export type Platform = "discord" | "messenger" | "signal" | "telegram" | "whatsapp";
 
 interface PlatformInformation {
     name: string;
@@ -38,6 +38,18 @@ export const PlatformsInfo: {
             reactions: false,
             replies: false,
             edits: false,
+            calls: false,
+        },
+    },
+    signal: {
+        name: "Signal",
+        color: [220, 85.8, 58.4],
+        defaultFilename: "<name> (<number>).json",
+        support: {
+            stickers: false,
+            reactions: true,
+            replies: true,
+            edits: true,
             calls: false,
         },
     },

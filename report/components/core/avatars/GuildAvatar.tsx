@@ -21,6 +21,7 @@ export const GuildAvatar = ({ index }: { index: number }) => {
                     <LazyImage src={guild.avatar} placeholder={placeholder} />
                 </div>
             );
+        case "signal":
         case "telegram":
         case "messenger":
         case "whatsapp":

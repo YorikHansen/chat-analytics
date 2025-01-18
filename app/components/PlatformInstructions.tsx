@@ -103,6 +103,9 @@ const MessengerInstructions = () => {
     );
 };
 
+// TODO: Download sigtop, export chat, JSON, export, wait, download
+const SignalInstructions = () => <></>;
+
 const TelegramInstructions = () => (
     <>
         <ol>
@@ -204,6 +207,7 @@ export const PlatformInstructions: {
 } = {
     discord: <DiscordInstructions />,
     messenger: <MessengerInstructions />,
+    signal: <SignalInstructions />,
     telegram: <TelegramInstructions />,
     whatsapp: <WhatsAppInstructions />,
 };

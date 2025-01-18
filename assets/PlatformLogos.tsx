@@ -4,6 +4,7 @@ import { Platform } from "@pipeline/Platforms";
 
 import DiscordLogo from "@assets/images/logos/discord.svg";
 import MessengerLogo from "@assets/images/logos/messenger.svg";
+import SignalLogo from "@assets/images/logos/signal.svg";
 import TelegramLogo from "@assets/images/logos/telegram.svg";
 import WhatsAppLogo from "@assets/images/logos/whatsapp.svg";
 
@@ -12,6 +13,7 @@ export const PlatformLogos: {
 } = {
     discord: <img src={DiscordLogo} alt="" />,
     messenger: <img src={MessengerLogo} alt="" />,
+    signal: <img src={SignalLogo} alt="" />,
     telegram: <img src={TelegramLogo} alt="" />,
     whatsapp: <img src={WhatsAppLogo} alt="" />,
 };

@@ -5,6 +5,7 @@ import { tryToFindTimestampAtEnd, wrapStringAsFile } from "@pipeline/parse/File"
 import { Parser } from "@pipeline/parse/Parser";
 import { DiscordParser } from "@pipeline/parse/parsers/DiscordParser";
 import { MessengerParser } from "@pipeline/parse/parsers/MessengerParser";
+import { SignalParser } from "@pipeline/parse/parsers/SignalParser";
 import { TelegramParser } from "@pipeline/parse/parsers/TelegramParser";
 import { WhatsAppParser } from "@pipeline/parse/parsers/WhatsAppParser";
 
@@ -38,6 +39,7 @@ describe("createParser should return the correct parser", () => {
     test.each<[Platform, new () => Parser]>([
         ["discord", DiscordParser],
         ["whatsapp", WhatsAppParser],
+        ["signal", SignalParser],
         ["telegram", TelegramParser],
         ["messenger", MessengerParser],
     ])("%s", async (platform, expectedClass) => {

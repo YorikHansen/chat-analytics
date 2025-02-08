@@ -46,11 +46,11 @@ export const PlatformsInfo: {
         color: [220, 85.8, 58.4],
         defaultFilename: "my-signal-export.json",
         support: {
-            stickers: false,
+            stickers: false, // This could be supported in the future
             reactions: true,
             replies: true,
             edits: false, // The plattform supports it, but the export doesn't
-            calls: false,
+            calls: false, // Signal supports calls, but does not store the duration
         },
     },
     telegram: {

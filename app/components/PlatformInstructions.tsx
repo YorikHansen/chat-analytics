@@ -126,9 +126,10 @@ const SignalInstructions = () => (
                 Use the following command with the following flags:
                 <ul>
                     <li>
-                        <code>signalbackup-tools <mark>path-to-signal.backup</mark> <mark>password</mark>{" "}
-                            --croptothreadsbyname <mark>"Name of Thread"</mark> --onlydb --output{" "}
-                            <mark>./path-to-out-dir/</mark></code>
+                        <code>signalbackup-tools <mark contentEditable>path-to-signal.backup</mark>{" "}
+                            <mark contentEditable>password</mark> --croptothreadsbyname{" "}
+                            <mark contentEditable>"Name of Thread"</mark> --output{" "}
+                            <mark contentEditable>./path-to-out-dir/</mark> --onlydb</code>
                     </li>
                 </ul>
             </li>
@@ -145,8 +146,9 @@ const SignalInstructions = () => (
                 Run the script with the following command with the following flags:
                 <ul>
                     <li>
-                        <code>python signalexport2json.py <mark>./path-to-signal-export-dir/database.sqlite</mark>{" "}
-                            <mark>output-path.json</mark> --bundle-to-messages</code>
+                        <code>python signalexport2json.py{" "}
+                            <mark contentEditable>./path-to-signal-export-dir/database.sqlite</mark>{" "}
+                            <mark contentEditable>output-path.json</mark> --bundle-to-messages</code>
                     </li>
                 </ul>
             </li>

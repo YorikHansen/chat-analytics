@@ -44,12 +44,12 @@ export const PlatformsInfo: {
     signal: {
         name: "Signal",
         color: [220, 85.8, 58.4],
-        defaultFilename: "<name> (<number>).json",
+        defaultFilename: "my-signal-export.json",
         support: {
             stickers: false,
             reactions: true,
             replies: true,
-            edits: true,
+            edits: false, // The plattform supports it, but the export doesn't
             calls: false,
         },
     },

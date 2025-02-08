@@ -103,8 +103,60 @@ const MessengerInstructions = () => {
     );
 };
 
-// TODO: Download sigtop, export chat, JSON, export, wait, download
-const SignalInstructions = () => <></>;
+
+const SignalInstructions = () => (
+    <>
+        <ol>
+            <li>
+                You will need a backup of your Signal messages. Check{" "}
+                <a target="_blank"
+                    href="https://support.signal.org/hc/en-us/articles/360007059752-Backup-and-Restore-Messages">
+                    this Signal Support page
+                </a> on how to do this.
+            </li>
+            <li>
+                Download the latest version of{" "}
+                <a href="https://github.com/bepaald/signalbackup-tools/"
+                    target="_blank">
+                    signalbackup-tools
+                </a>.
+            </li>
+            <li>
+                Export the database with the chat you want to analyze.{" "}
+                Use the following command with the following flags:
+                <ul>
+                    <li>
+                        <code>signalbackup-tools <mark>path-to-signal.backup</mark> <mark>password</mark>{" "}
+                            --croptothreadsbyname <mark>"Name of Thread"</mark> --onlydb --output{" "}
+                            <mark>./path-to-out-dir/</mark></code>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Now you have a <code>database.sqlite</code> file in your output directory.{" "}
+
+                Download the latest version of the python script{" "}
+                <a href="https://gist.github.com/YorikHansen/82986e88475f14b4730859e7d6ca4f08"
+                    target="_blank">
+                    signalexport2json.py
+                </a>.
+            </li>
+            <li>
+                Run the script with the following command with the following flags:
+                <ul>
+                    <li>
+                        <code>python signalexport2json.py <mark>./path-to-signal-export-dir/database.sqlite</mark>{" "}
+                            <mark>output-path.json</mark> --bundle-to-messages</code>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Now you have a <code>signal-export.json</code> file in the same directory.{" "}
+                This is the file you will need to upload in the next step.
+            </li>
+        </ol>
+    </>
+);
 
 const TelegramInstructions = () => (
     <>

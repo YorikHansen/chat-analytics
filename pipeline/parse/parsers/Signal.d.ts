@@ -1,42 +1,62 @@
-// Types for chat dumps from sigtop (https://github.com/tbvdm/sigtop)
+// Types for chat dumps from signalexport2json.py (a signalbackup-tools to json converter)
+//  with the option --bundle-to-messages
+
+interface SignalAttachment {
+    _id: number;
+    content_type: string;
+    data_size: number;
+    file_name: string;
+    width: number;
+    height: number;
+    sticker_emoji: string;
+    sticker?: SignalSticker;
+}
+
+interface SignalGroups {
+    _id: number;
+    group_id: number;
+    title: string;
+}
 
 interface SignalMessage {
-    timestamp: number;
-    attachements: []; // Some kind of list
-    id: string;
-    conversationId: string;
-    readStatus: number; // TODO: enum
-    received_at: number;
-    received_at_ms: number;
-    seenStatus: number; // TODO: enum
-    sent_at: number;
-    serverGuid: string;
-    serverTimestamp: number;
-    source?: string;
-    sourceDevice: number; // TODO: enum
-    type: string; // TODO: enum
-    unidentifiedDeliveryReceived: boolean;
-    schemaVersion: number;
+    _id: number;
+    date_sent: number;
+    type: number;
     body: string;
-    bodyRanges: []; // Some kind of list
-    contact: []; // Some kind of list
-    decrypted_at: number;
-    errors: []; // Some kind of list
-    flags: number; // TODO: enum
-    hasAttachments: boolean;
-    isViewOnce: boolean;
-    mentionsMe: boolean;
-    preview: []; // Some kind of list
-    requiredProtocolVersion: number;
-    supportedVersionAtReceive: number;
-    sourceServiceId: string;
-    editHistory?: SignalMessage[];
-    reactions?: SignalReaction[];
+    quote_id: number;
+    original_message_id: number;
+    attachments: SignalAttachment[];
+    thread?: SignalThread;
+    from_recipient?: SignalRecipient;
+    to_recipient?: SignalRecipient;
+    reactions: SignalReaction[];
 }
 
 interface SignalReaction {
+    _id: number;
     emoji: string;
-    fromId: string;
-    targetTimestamp: number;
-    timestamp: number;
+    author?: SignalRecipient;
+}
+
+interface SignalRecipient {
+    _id: number;
+    e164: string | null;
+    username: string | null;
+    profile_joined_name: string;
+    system_joined_name: string | null;
+    groups: SignalGroups[];
+}
+
+interface SignalSticker {
+    _id: number;
+    pack_id: number;
+    pack_title: string;
+    pack_author: string;
+    sticker_id: number;
+    emoji: string;
+}
+
+interface SignalThread {
+    _id: number;
+    recipient?: SignalRecipient;
 }
